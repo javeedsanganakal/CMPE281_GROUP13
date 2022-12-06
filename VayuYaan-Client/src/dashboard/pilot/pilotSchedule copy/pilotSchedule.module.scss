@@ -1,0 +1,195 @@
+.pilotScheduleContainer {
+  display: flex;
+  justify-content: center;
+  width: 98vw;
+  height: calc(100vh - 90px);
+    margin-block: 64px;
+
+  .leftDiv {
+    width: 50vw;
+    text-align: center;
+    .title {
+      font-size: 36px;
+      font-weight: 600;
+      text-align: left;
+      margin-left: 84px;
+    }
+    .calendarDiv{
+      margin: 46px;
+      margin-top: 100px;
+      
+    }
+  }
+  .rightDiv {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 82px;
+    .upcomingDiv {
+      width: 482px;
+      height: 355px;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      .titleDiv {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        height: 70px;
+        margin-left: 24px;
+        .colourDiv {
+          .greenDiv {
+            width: 38px;
+            height: 38px;
+            background-color: #5db075;
+          }
+        }
+        .contentDiv {
+          font-size: 18px;
+          line-height: 21px;
+          color: #414141;
+          font-weight: 600;
+        }
+      }
+
+      .collectionDiv {
+        width: 439px;
+        height: 115px;
+        border: 1px solid #e5e5e5;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px;
+        margin-bottom: 19px;
+        margin-inline: auto;
+        .detailsDiv {
+          text-align: left;
+          width: 180px;
+          .dateDiv {
+            font-size: 18px;
+            font-weight: 600;
+            color: #414141;
+          }
+          .timeDiv {
+            font-size: 16px;
+            font-weight: 700;
+            color: #676767;
+          }
+          .addressDiv {
+            font-size: 14px;
+            font-weight: 400;
+            color: #676767;
+          }
+          .nameDiv {
+            font-size: 16px;
+            font-weight: 400;
+            color: #676767;
+          }
+        }
+        .imageDiv {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          width: 133px;
+          height: 90px;
+          .title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #676767;
+          }
+          .image {
+            width: 133px;
+            height: 58px;
+            border-radius: 20px;
+          }
+        }
+        .buttonDiv {
+          width: 133px;
+          margin-top: 20px;
+          button {
+            width: 99px;
+            height: 39px;
+            background-color: #007bff;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+    .availabilityDiv {
+      width: 489px;
+      height: 293px;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      .titleDiv {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        height: 70px;
+        margin-left: 24px;
+        .colourDiv {
+          .blueDiv {
+            width: 38px;
+            height: 38px;
+            background-color: #007aff;
+          }
+        }
+        .contentDiv {
+          font-size: 18px;
+          line-height: 21px;
+          color: #414141;
+          font-weight: 600;
+        }
+      }
+      .collectionDiv {
+        width: 314px;
+        height: 80px;
+        border: 1px solid #e5e5e5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-inline: auto;
+        border-radius: 10px;
+        padding-inline: 15px;
+        margin-bottom: 26px;
+        .detailsDiv {
+          color: #414141;
+          font-size: 18px;
+          font-weight: 600;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 12px;
+        }
+        .buttonDiv {
+          width: 73px;
+          button {
+            width: 73px;
+            height: 22px;
+            background-color: #007bff;
+            border-radius: 10px;
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
+

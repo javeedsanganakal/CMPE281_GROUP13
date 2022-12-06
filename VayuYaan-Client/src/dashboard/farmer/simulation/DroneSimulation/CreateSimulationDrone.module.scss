@@ -1,0 +1,75 @@
+.homePageContainer {
+    padding-right: 70px;
+    .homepageHeader {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 39px;
+      color: #1a3447;
+      padding: 34px 0 0 15px;
+    }
+    .droneDetailSection {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 6px;
+      .simulatedDrone {
+        background: #b9b9c3;
+        border-radius: 10px;
+        padding: 14px 26px;
+        .simulatedDroneSec {
+          background: #00a3ff;
+          border-radius: 5px;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 16px;
+          color: #ffffff;
+          padding: 5px 20px;
+          white-space: break-spaces;
+          width: 106px;
+          text-align: start;
+        }
+      }
+    }
+    .upcomingBookService {
+      display: flex;
+      align-items: center;
+      background: #5db075;
+      border-radius: 10px;
+      padding: 16px 20px;
+      width: 350px;
+      .upcomingBook {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        color: #ffffff;
+        padding-right: 8px;
+      }
+      .upcomingBookWrap {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        color: #ffffff;
+      }
+    }
+    .serverTable{
+      padding-top: 70px;
+    }
+
+    .createDroneForm{
+        display: flex;
+        flex-direction: column;
+        .createDroneFormTextBox{
+            height: 100px;
+            width: 200px;
+        }
+    }
+    
+
+}
+
+
+  

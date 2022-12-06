@@ -1,0 +1,287 @@
+.containerDiv {
+    span{
+        font-size: 16px;
+        color: #7C8DB5;
+    }
+  .bodyDiv {
+    display: flex !important;
+    align-items: flex-start;
+    .contentDiv {
+      margin-inline: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-top: 28px;
+      .headerDiv {
+        height: 41px;
+        width: 70vw;
+        font-size: 36px;
+        font-weight: 600;
+        color: #1a3447;
+        display: flex;
+        justify-content: space-between;
+      }
+      .droneBtnBox {
+        width: 557px;
+        height: 71px;
+        background: #b9b9c3;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border: none;
+        margin-top: 32px;
+        .droneBtn {
+          width: 155px;
+          height: 45px;
+          border: none;
+          padding: auto 10px;
+          background: #007aff;
+          border-radius: 4px;
+          font-family: "Work Sans";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 14px;
+
+          color: #ffffff;
+        }
+      }
+      .dronStatistics {
+        width: 917px;
+        height: 478px;
+        border-radius: 12px;
+        border: 1px solid #e6edff;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        .headingDiv {
+          font-family: "Poppins";
+          font-size: 28px;
+          line-height: 42px;
+          font-weight: 500;
+          color: black;
+          text-align: left;
+          margin: 20px 0px 20px 20px;
+        }
+        .contentDiv {
+          .topDiv {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .warapperDiv{
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                gap:5px;
+                 .statusDiv {
+              width: 660px;
+              height: 142px;
+              border: 1px solid #e5e5e5;
+              box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+              border-radius: 12px;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+
+              .smallDiv {
+                .number {
+                  font-size: 28px;
+                  font-weight: 600;
+                  line-height: 42px;
+                }
+                .text {
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 24px;
+                  color: #000000;
+                }
+              }
+            }
+            }
+           .warapperDiv{
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                gap:5px;
+                .totalDiv {
+              width: 182px;
+              height: 142px;
+              border: 1px solid #e6edff;
+              box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+              border-radius: 12px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              .smallDiv {
+                .number {
+                  font-size: 28px;
+                  font-weight: 600;
+                  line-height: 42px;
+                }
+                .text {
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 24px;
+                  color: #000000;
+                }
+              }
+            }
+          }
+                    
+                }
+            
+          .bottomDiv {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+             .warapperDiv{
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                gap:5px;
+            .statusDiv {
+              width: 519px;
+              height: 142px;
+              border: 1px solid #e5e5e5;
+              box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+              border-radius: 12px;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+
+              .smallDiv {
+                .number {
+                  font-size: 28px;
+                  font-weight: 600;
+                  line-height: 42px;
+                }
+                .text {
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 24px;
+                  color: #000000;
+                }
+              }
+            }
+        }
+          }
+        }
+      }
+      .bottomBoxs {
+        display: flex;
+        justify-content: space-around;
+        align-items: start;
+        gap: 20px;
+        .dronServiceStatistics {
+          width: 580px;
+          height: 721px;
+          border: 1px solid #e6edff;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          border-radius: 12px;
+
+          .headingDiv {
+            font-family: "Poppins";
+            font-size: 28px;
+            line-height: 42px;
+            font-weight: 500;
+            color: black;
+            text-align: left;
+            margin: 20px 0px 20px 20px;
+          }
+          .contentDiv {
+            .bottomDiv {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+              gap: 37px;
+              align-items: center;
+              
+                 .warapperDiv{
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                gap:5px;
+              .statusDiv {
+                width: 519px;
+                height: 142px;
+                border: 1px solid #e5e5e5;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 12px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                .smallDiv {
+                  .number {
+                    font-size: 28px;
+                    font-weight: 600;
+                    line-height: 42px;
+                  }
+                  .text {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #000000;
+                  }
+                }
+              }}
+            }
+          }
+        }
+        .droneFleettatistics {
+          width: 480px;
+          height: 283px;
+          border: 1px solid #e6edff;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          border-radius: 12px;
+          .headingDiv {
+            font-family: "Poppins";
+            font-size: 28px;
+            line-height: 42px;
+            font-weight: 500;
+            color: black;
+            text-align: left;
+            margin: 20px 0px 20px 20px;
+          }
+          .contentDiv {
+            .bottomDiv {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+                .warapperDiv{
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                gap:5px;
+              .statusDiv {
+                width: 450px;
+                height: 142px;
+                border: 1px solid #e5e5e5;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 12px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                .smallDiv {
+                  width: 35%;
+
+                  .number {
+                    font-size: 28px;
+                    font-weight: 600;
+                    line-height: 42px;
+                  }
+                  .text {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #000000;
+                  }
+                }
+              }}
+            }
+          }
+        }
+      }
+    }
+  }
+}

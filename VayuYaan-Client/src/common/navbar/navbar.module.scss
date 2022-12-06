@@ -1,0 +1,33 @@
+.navbar {
+    position: fixed;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    height: 90px;
+    background: #1A3447;
+
+    .nav-links {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .nav-item {
+        color: white;
+        margin: 0px 80px;
+        font-size: 20px;;
+    }
+
+    .nav-search {
+        float: right;
+
+        input {
+            // border: transparent;
+            background: transparent;
+            border-bottom: 1px #000000;
+        }
+    }
+}

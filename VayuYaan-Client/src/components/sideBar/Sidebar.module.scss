@@ -1,0 +1,88 @@
+.sideBarContainer {
+  width: 250px;
+  //   height: calc(100vh - 90px);
+  height: 100%;
+  padding: 40px 30px;
+  box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.5);
+  .sideBarHeader {
+    display: flex;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 39px;
+    letter-spacing: 0.01em;
+    color: #000000;
+    margin-bottom: 65px;
+    background: white;
+    padding: 5px;
+    gap: 10px;
+  }
+  .sideBarHeaderDark {
+    display: flex;
+    gap: 10px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 39px;
+    letter-spacing: 0.01em;
+    color: white;
+    margin-bottom: 65px;
+    padding: 5px;
+    background: #1a3447;
+    border-radius: 8px;
+    height: fit-content;
+  }
+  .sideBarContent {
+    .link {
+      text-decoration: none;
+      .sidebarOptWrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 0 15px 10px;
+        .sidebarOpt {
+          display: flex;
+          .sidebarText {
+            padding: 0 0 0 15px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 21px;
+            letter-spacing: -0.01em;
+            color: #1a3447;
+          }
+        }
+        .rigthArrow {
+          padding-right: 20px;
+        }
+      }
+      .selectedSidebarOptWrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 0 15px 10px;
+        background: #1a3447;
+        border-radius: 8px;
+        .sidebarOpt {
+          display: flex;
+          .sidebarIcon {
+            filter: brightness(0) invert(1);
+          }
+          .selectedSidebarText {
+            padding: 0 0 0 15px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 21px;
+            letter-spacing: -0.01em;
+            color: #ffffff;
+          }
+        }
+        .rigthArrow {
+          padding-right: 20px;
+          .selectedSidebarIcon {
+            filter: brightness(0) invert(1);
+          }
+        }
+      }
+    }
+  }
+}

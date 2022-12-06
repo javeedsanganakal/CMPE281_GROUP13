@@ -1,0 +1,39 @@
+.drone {
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    width: 350px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.title {
+    font-weight: 600;
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.info {
+    margin: 2px 0;
+    font-size: 16px;
+}
+
+.rate {
+    font-weight: 800;
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.button {
+    button {
+        background: #007BFF;
+        border-radius: 10px;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+    }
+}

@@ -1,0 +1,42 @@
+.timesPerDayContainer{
+    display: flex;
+    flex-direction: column;
+    margin-left: -70px;
+  width: 98vw;
+  height: calc(100vh - 90px);
+  padding-top: 64px;
+    .titleDiv{
+        height: 41px;
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 43px;
+        text-align: start;
+        margin-left: 87px;
+    }
+    .contentDiv{
+        height: 450px;
+        width: 98vw;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+    .ButtonDiv{
+        height: 200px;
+        width: 98vw;
+        display: flex;
+        justify-content: center;
+        button{
+            width: 240px;
+            height: 53px;
+            background-color:#5DB075;
+            border-radius: 10px;
+            border: none;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 21.09px;
+            color: white;
+
+        }
+    }
+}

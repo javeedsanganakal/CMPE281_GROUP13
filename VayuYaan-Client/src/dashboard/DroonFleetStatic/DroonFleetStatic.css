@@ -1,0 +1,160 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#hero-page-droon-fleet{
+    width: 1400px;
+    /* border: 2px solid green; */
+    padding-left: 10px;
+}
+#donor-cloud-tracking{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 39px;
+color: #1A3447;
+}
+#tracking-btn-box{
+width: 500px;
+height: 60px;
+background: #B9B9C3;
+border-radius: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+}
+.tracking-btn{
+background: #00A3FF;
+border-radius: 5px;
+padding: 5px 10px;
+font-family: 'Work Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 16px;
+color: #FFFFFF;
+}
+#active-status-box{
+display: flex;
+background: #FFFFFF;
+box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.5);
+border-radius: 30px;
+height: 80px;
+width: 400px;
+align-items: center;
+justify-content: center;
+gap: 20px;
+}
+#donor-cloud-tracking{
+    margin: 20px 0px;
+position: relative;
+right: 425px;
+}
+#no-of-drone-status{
+    position: relative;
+    right: 535px;
+    font-weight: bolder;
+}
+#no-drones-remark{
+    position: relative;
+    right: 510px;
+    font-weight: bolder; 
+    margin-bottom: 10px;
+}
+#statics-view{
+    position: relative;
+    right: 560px;
+    font-weight: bolder; 
+    margin: 10px 0px;
+}
+#active-status-count{
+color: rgb(13, 234, 13);
+font-size: 24px;
+}
+#stopped-status-count{
+color: red;
+font-size: 24px;
+}
+#connected-status-count{
+color: rgb(248, 248, 10);
+font-size: 24px;
+}
+#registere-status-count{
+color: blue;
+font-size: 24px;
+}
+#remark-point{
+display: flex;
+gap: 10px;
+}
+.remark-point-data{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+#data-collect{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: green;
+}
+#data-surveillance{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color:#FF0000;
+}
+#data-payload{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #5932EA;
+}
+#circle-box{
+    display: flex;
+    gap: 20px;
+}
+#circle-breen{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: #E2FBD7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#circle-blue{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: #DAD7FE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#circle-red{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: #FFE5D3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#stastics-btn-container{
+    height: 60px;
+    width: 150px;
+    background: #00A3FF;
+border-radius: 10px;
+color: #FFFFFF;
+font-weight: bolder;
+}
+#stattic-btn-p{
+    font-size: 16px;
+    font-weight: normal;
+}
