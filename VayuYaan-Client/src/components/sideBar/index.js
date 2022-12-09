@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import styles from "./Sidebar.module.scss";
 import DashboardIcon from "../../Assets/dashboardIcon.svg";
 import DashboardIconBlack from "../../Assets/dashboardBlack.svg";
@@ -16,6 +16,7 @@ function SideBar() {
   const route = useLocation();
   const [selected, setSelected] = useState(false);
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user"));
 
   let sidebarOptions = [
     {
@@ -38,13 +39,15 @@ function SideBar() {
       text: "Maintenance",
       hasMoreOpt: true,
       url: "/dashboard/farmer/maintenance",
-      isSelected: route.pathname === "/dashboard/farmer/maintenance" ? true : false,
+      isSelected:
+        route.pathname === "/dashboard/farmer/maintenance" ? true : false,
     },
     {
       imgUrl: PercentageIcon,
       text: "My Bookings",
       hasMoreOpt: true,
-      isSelected: route.pathname === "/dashboard/farmer/myBookings" ? true : false,
+      isSelected:
+        route.pathname === "/dashboard/farmer/myBookings" ? true : false,
       url: "/dashboard/farmer/myBookings",
     },
     {
@@ -66,7 +69,8 @@ function SideBar() {
       text: "Simulation Management",
       hasMoreOpt: true,
       url: "/dashboard/farmer/dronesimulation/",
-      isSelected: route.pathname === "/dashboard/farmer/dronesimulation/" ? true : false,
+      isSelected:
+        route.pathname === "/dashboard/farmer/dronesimulation/" ? true : false,
     },
   ];
   console.log("route", selected);
@@ -75,6 +79,85 @@ function SideBar() {
   //     setSideBatOpt(sideBarOpt)
   //   }
   // }, [route])
+
+  const adminSideBar = [
+    {
+      imgUrl: KeySquare,
+      text: "Farmers Management",
+      hasMoreOpt: true,
+      url: "/dashboard/farmer/management",
+      isSelected:
+        route.pathname === "/dashboard/farmer/management" ? true : false,
+    },
+    {
+      imgUrl: KeySquare,
+      text: " Drone Management",
+      hasMoreOpt: true,
+      url: "/dashboard/drone/management",
+      isSelected:
+        route.pathname === "/dashboard/drone/management" ? true : false,
+    },
+    {
+      imgUrl: KeySquare,
+      text: "Pilots Management",
+      hasMoreOpt: true,
+      url: "/dashboard/pilot/management",
+      isSelected:
+        route.pathname === "/dashboard/pilot/management" ? true : false,
+    },
+    {
+      imgUrl: KeySquare,
+      text: "Farms Management",
+      hasMoreOpt: true,
+      url: "/dashboard/farm/management",
+      isSelected:
+        route.pathname === "/dashboard/farm/management" ? true : false,
+    },
+    {
+      imgUrl: KeySquare,
+      text: " Drone Tracking",
+      hasMoreOpt: true,
+      url: "/dashboard/drone/cloud/map",
+      isSelected:
+        route.pathname === "/dashboard/drone/cloud/map" ? true : false,
+    },
+    {
+      imgUrl: KeySquare,
+      text: "Cloud Dashboard Status",
+      hasMoreOpt: true,
+      url: "/admin/cloudDashboard",
+      isSelected: route.pathname === "/admin/cloudDashboard" ? true : false,
+    },
+    {
+      imgUrl: KeySquare,
+      text: " AI Models",
+      hasMoreOpt: true,
+      url: "/admin/aimodels",
+      isSelected: route.pathname === "/admin/aimodels" ? true : false,
+    },
+    {
+      imgUrl: KeySquare,
+      text: "AR/VR Tracking",
+      hasMoreOpt: true,
+      url: "/admin/arvrtracking",
+      isSelected: route.pathname === "/admin/arvrtracking" ? true : false,
+    },
+    {
+      imgUrl: KeySquare,
+      text: " Statistics",
+      hasMoreOpt: true,
+      url: "/admin/statistics",
+      isSelected: route.pathname === "/admin/statistics" ? true : false,
+    },
+  ];
+
+  const sideBarData = useMemo(() => {
+    if (user.role === "admin") {
+      return [...sidebarOptions.slice(0, 2), ...adminSideBar];
+    } else {
+      return [...sidebarOptions];
+    }
+  }, [user]);
 
   return (
     <div className={styles.sideBarContainer}>
@@ -96,7 +179,7 @@ function SideBar() {
         </div>
       </div>
       <div className={styles.sideBarContent}>
-        {sidebarOptions.map((item) => {
+        {sideBarData.map((item) => {
           return (
             <Link className={styles.link} to={item.url}>
               <div
