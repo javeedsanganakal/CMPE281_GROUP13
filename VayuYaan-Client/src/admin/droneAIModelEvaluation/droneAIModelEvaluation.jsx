@@ -6,8 +6,10 @@ import bargraph from "./images/slope-chart-in-excel-5.jpg";
 import box from "./images/images.png";
 import code from "./images/images(4).jfif";
 import "./droneAIModelEvaluation.css";
+import { useNavigate } from "react-router-dom";
 
 function ModelEvaluations() {
+  const navigate = useNavigate();
   return (
     <div id="model-containerBody">
       <Header />
@@ -18,9 +20,24 @@ function ModelEvaluations() {
         </div>
         <div className="bar_list">
           <div id="drone-btn-box">
-            <button className="drone-btn">Drone Cloud Dashboard</button>
-            <button className="drone-btn">Simulated Drone Cloud</button>
-            <button className="drone-btn">Drone Services Map</button>
+            <button
+              className="drone-btn"
+              onClick={() => navigate("/admin/aimodels")}
+            >
+              AI Modals
+            </button>
+            <button
+              className="drone-btn"
+              onClick={() => navigate("/admin/arvrtracking")}
+            >
+              AR/VR Tracking
+            </button>
+            <button
+              className="drone-btn"
+              onClick={() => navigate("/admin/statistics")}
+            >
+              Statistics
+            </button>
           </div>
         </div>
         <div className="prt-service">
