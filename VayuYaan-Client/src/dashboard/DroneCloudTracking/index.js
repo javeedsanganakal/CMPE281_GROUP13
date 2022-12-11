@@ -5,6 +5,7 @@ import SearchIcon from "../../Assets/searchIcon.svg";
 import DroneImaage from "../../Assets/drone-image.svg";
 import MapD from "../CouldDashboardMap/Map";
 import Map from "../../profile/farm/map/Map";
+import { useNavigate } from "react-router-dom";
 
 const flag = [
   {
@@ -26,6 +27,7 @@ const flag = [
 ];
 
 const DroneCloudTracking = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div>
@@ -34,11 +36,24 @@ const DroneCloudTracking = () => {
             <div className={styles.homepageHeader}>Selected Drone Tracking</div>
             <div className={styles.droneDetailSection}>
               <div className={styles.simulatedDrone}>
-                <div className={styles.simulatedDroneSec}>Fleet Statistics</div>
-                <div className={styles.simulatedDroneSec}>
-                  Drone Map Tracking
+                <div
+                  className={styles.simulatedDroneSec}
+                  onClick={() => navigate("/dashboard/drone/cloud/map")}
+                >
+                  Drone Cloud Map
                 </div>
-                <div className={styles.simulatedDroneSec}>AR/VR Tracking</div>
+                <div
+                  className={styles.simulatedDroneSec}
+                  onClick={() => navigate("/dashboard/drone/cloud/tracking")}
+                >
+                  Drone Cloud Tracking
+                </div>
+                <div
+                  className={styles.simulatedDroneSec}
+                  onClick={() => navigate("/dashboard/drone/catalog")}
+                >
+                  Drone Catalog
+                </div>
               </div>
             </div>
             <div className={styles.droneMap}>Drone ID #4</div>
@@ -153,59 +168,61 @@ const DroneCloudTracking = () => {
                 </div>
                 <div style={{ margin: "10px 0  0 20px", width: "70vw" }}>
                   {/* <MapD /> */}
-                  <Map lineCoordinates={[
-                    {
-                      "lat": 54.4764587956108,
-                      "lng": -7.75824062499999
-                    },
-                    {
-                      "lat": 51.67940757138137,
-                      "lng": -3.1000374999999902
-                    },
-                    {
-                      "lat": 54.52749466436205,
-                      "lng": 2.8765250000000098
-                    },
-                    {
-                      "lat": 51.73387233546496,
-                      "lng": 7.62261875000001
-                    },
-                    {
-                      "lat": 48.98746903250036,
-                      "lng": 2.2612906250000098
-                    },
-                    {
-                      "lat": 45.65249305327456,
-                      "lng": 6.65582187500001
-                    }
-                  ]}
-                    pointerCoordinates={[{
-                      "lat": 54.4764587956108,
-                      "lng": -7.75824062499999
-                    },
-                    {
-                      "lat": 51.67940757138137,
-                      "lng": -3.1000374999999902
-                    },
-                    {
-                      "lat": 54.52749466436205,
-                      "lng": 2.8765250000000098
-                    },
-                    {
-                      "lat": 51.73387233546496,
-                      "lng": 7.62261875000001
-                    },
-                    {
-                      "lat": 48.98746903250036,
-                      "lng": 2.2612906250000098
-                    },
-                    {
-                      "lat": 45.65249305327456,
-                      "lng": 6.65582187500001
-                    }]}
-
-
-                    isDisable />
+                  <Map
+                    lineCoordinates={[
+                      {
+                        lat: 54.4764587956108,
+                        lng: -7.75824062499999,
+                      },
+                      {
+                        lat: 51.67940757138137,
+                        lng: -3.1000374999999902,
+                      },
+                      {
+                        lat: 54.52749466436205,
+                        lng: 2.8765250000000098,
+                      },
+                      {
+                        lat: 51.73387233546496,
+                        lng: 7.62261875000001,
+                      },
+                      {
+                        lat: 48.98746903250036,
+                        lng: 2.2612906250000098,
+                      },
+                      {
+                        lat: 45.65249305327456,
+                        lng: 6.65582187500001,
+                      },
+                    ]}
+                    pointerCoordinates={[
+                      {
+                        lat: 54.4764587956108,
+                        lng: -7.75824062499999,
+                      },
+                      {
+                        lat: 51.67940757138137,
+                        lng: -3.1000374999999902,
+                      },
+                      {
+                        lat: 54.52749466436205,
+                        lng: 2.8765250000000098,
+                      },
+                      {
+                        lat: 51.73387233546496,
+                        lng: 7.62261875000001,
+                      },
+                      {
+                        lat: 48.98746903250036,
+                        lng: 2.2612906250000098,
+                      },
+                      {
+                        lat: 45.65249305327456,
+                        lng: 6.65582187500001,
+                      },
+                    ]}
+                    isDisable
+                  />
                 </div>
               </div>
             </div>

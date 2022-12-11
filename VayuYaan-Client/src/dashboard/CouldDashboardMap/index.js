@@ -5,6 +5,7 @@ import DroneImaage from "../../Assets/drone-image.svg";
 import Layout from "../../components/layouts";
 
 import Map from "./Map";
+import { useNavigate } from "react-router-dom";
 
 const flag = [
   {
@@ -50,6 +51,7 @@ const droneCards = [
 ];
 
 const CouldDashboardMap = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div>
@@ -58,12 +60,23 @@ const CouldDashboardMap = () => {
             <div className={styles.homepageHeader}>Drone Could Dashboard</div>
             <div className={styles.droneDetailSection}>
               <div className={styles.simulatedDrone}>
-                <div className={styles.simulatedDroneSec}>
-                  Drone Cloud Dashboard
+                <div
+                  className={styles.simulatedDroneSec}
+                  onClick={() => navigate("/dashboard/drone/cloud/map")}
+                >
+                  Drone Cloud Map
                 </div>
-                <div className={styles.simulatedDroneSec}>Simulated Drones</div>
-                <div className={styles.simulatedDroneSec}>
-                  Drone Services Map
+                <div
+                  className={styles.simulatedDroneSec}
+                  onClick={() => navigate("/dashboard/drone/cloud/tracking")}
+                >
+                  Drone Cloud Tracking
+                </div>
+                <div
+                  className={styles.simulatedDroneSec}
+                  onClick={() => navigate("/dashboard/drone/catalog")}
+                >
+                  Drone Catalog
                 </div>
               </div>
             </div>

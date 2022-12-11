@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import Signup from "./auth/Signup";
 import Login from "./auth/Login";
@@ -46,24 +46,25 @@ import FarmPlotting from "./profile/farm/FarmPlotting";
 import CouldDashboardMap from "./dashboard/CouldDashboardMap";
 import DroneCatalog from "./dashboard/DroneCatalog";
 import DroneCloudTracking from "./dashboard/DroneCloudTracking";
-import PilotSchedule from "./dashboard/pilot/pilotSchedule"
-import TimesPerDay from "./dashboard/pilot/timesPerDay"
+import PilotSchedule from "./dashboard/pilot/pilotSchedule";
+import TimesPerDay from "./dashboard/pilot/timesPerDay";
 // import CloudDashboardHome from "./dashboard/cloudDashboardHome/cloudDashBoard"
-import DroneFleetStatistics from "./dashboard/DroonFleetStatic/DroonFleetStatic"
+import DroneFleetStatistics from "./dashboard/DroonFleetStatic/DroonFleetStatic";
 // import ServiceHistory from "./dashboard/service/App"
-import FarmerMain from "./dashboard/FarmerMaintence/Farmermain"
+import FarmerMain from "./dashboard/FarmerMaintence/Farmermain";
 import Map from "./profile/farm/map/Map";
 
-import CloudDashboardHome from './admin/CloudDashboardHome/index';
-import DroneAIModels from './admin/droneAIModelEvaluation/droneAIModelEvaluation';
-import DroneData from './admin/DroneData/index';
-import Statistics from './admin/DronFleetStatistic/droneFleetStatistics';
-
+import CloudDashboardHome from "./admin/CloudDashboardHome/index";
+import DroneAIModels from "./admin/droneAIModelEvaluation/droneAIModelEvaluation";
+import DroneData from "./admin/DroneData/index";
+import Statistics from "./admin/DronFleetStatistic/droneFleetStatistics";
+import CreatePilotManagement from "./dashboard/createPilotManagement/index";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Navigate to="/auth/login" />} />
         <Route path="/auth">
           <Route path="signup" element={<Signup />} />
           <Route path="login" element={<Login />} />
@@ -83,7 +84,7 @@ function App() {
           <Route path="pilot/3" element={<PilotThree />} />
           <Route path="pilot/4" element={<PilotFour />} />
           <Route path="farm/1" element={<FarmOne />} />
-          <Route path="farm/plotting" element={<Map isConnected/>} />
+          <Route path="farm/plotting" element={<Map isConnected />} />
           <Route path="farm/2" element={<FarmTwo />} />
           <Route path="farm/3" element={<FarmThree />} />
           <Route path="farm/4" element={<FarmSelect />} />
@@ -127,7 +128,12 @@ function App() {
           />
 
           <Route path="pilot" element={<PilotDashboard />} />
-          <Route path="pilot/scheduleOne/" element={<PilotSchedule title={"Pilot  Schedule"} btn={"Schedule"} />} />
+          <Route
+            path="pilot/scheduleOne/"
+            element={
+              <PilotSchedule title={"Pilot  Schedule"} btn={"Schedule"} />
+            }
+          />
           <Route path="pilot/scheduleTwo" element={<ScheduleTwo />} />
           <Route path="pilot/scheduleThree/:id" element={<ScheduleThree />} />
 
@@ -139,17 +145,28 @@ function App() {
 
           <Route path="farmer/management" element={<FarmerManagement />} />
           <Route path="drone/management" element={<DroneManagement />} />
-          <Route path="pilot/management" element={<PilotManagement />} />
+          <Route path="pilot/management" element={<CreatePilotManagement />} />
           <Route path="farm/management" element={<FarmManagement />} />
           <Route path="pilot/schedule" element={<PilotSchedule />} />
-          <Route path="farmer/maintenance" element={<TimesPerDay title={"My Schedule for maintenance"} btn={"Confirm"} />} />
+          <Route
+            path="farmer/maintenance"
+            element={
+              <TimesPerDay
+                title={"My Schedule for maintenance"}
+                btn={"Confirm"}
+              />
+            }
+          />
         </Route>
 
         {/* Page 1 : Cloud Dashboard Home*/}
         {/* <Route path="/admin/cloudDashboardHome" element={<CloudDashboardHome />} /> */}
 
         {/* Page 2 : Drone Fleet Statistics Pie Charts*/}
-        <Route path="/admin/droneFleetStatistics" element={<DroneFleetStatistics />} />
+        <Route
+          path="/admin/droneFleetStatistics"
+          element={<DroneFleetStatistics />}
+        />
 
         {/* Page 3 : Drone AIModel Evaluation*/}
         {/* <Route path="/admin/droneAIModelEvaluation" element={<DroneAIModelEvaluation />} /> */}
