@@ -22,8 +22,7 @@ const TimesPerDay = ({
     };
   return (
     <div>
-
-      {/* <Layout> */}
+      <Layout>
       <div className={styles.timesPerDayContainer}>
         <div className={styles.titleDiv}>
           <div>{title}</div>
@@ -44,7 +43,7 @@ const TimesPerDay = ({
           <button onClick={() => alert(`Schedule Confirmed for ${date.startValue.toString().substring(0, 15)} ${value}!`)}>{btn || 'Confirm'} </button>
         </div>
       </div>
-      {/* </Layout> */}
+      </Layout>
     </div>
     
   );
