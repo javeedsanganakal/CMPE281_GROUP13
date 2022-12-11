@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Header.module.scss";
 import SearchIcon from "../../Assets/searchIcon.svg";
 
@@ -6,6 +6,7 @@ import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
 function Header() {
+  const [user, setUser] = useState();
   const onLogout = () => {
     localStorage.removeItem("user");
     cookies.remove("pilot");
@@ -14,8 +15,11 @@ function Header() {
     window.location = "/auth/login";
   };
 
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem("user")));
+  }, []);
+
   const goHome = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
     if (user.role === "farmer") {
       window.location = "/profile/farmer";
     }
@@ -23,7 +27,7 @@ function Header() {
       window.location = "/profile/pilot";
     }
     if (user.role === "admin") {
-      window.location = "/dashboard/farmer/management";
+      window.location = "/dashboard/drone/management";
     }
   };
 
