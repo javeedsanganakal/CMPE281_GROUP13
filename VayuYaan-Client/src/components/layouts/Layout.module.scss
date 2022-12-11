@@ -1,5 +1,6 @@
 .sidebarLayout {
   display: flex;
+  z-index: 5;
   .layoutChildren {
     background: #ffffff;
     box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.5);

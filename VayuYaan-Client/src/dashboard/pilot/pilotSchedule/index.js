@@ -1,13 +1,29 @@
 import React, { useState } from "react";
 import Header from "../../../components/header";
 import styles from "./pilotSchedule.module.scss";
+import stylesS from "../timesPerDay/timesPerDay.module.scss";
 import DataCollectionImg from "../../../Assets/data-collection-img.svg";
 import SurveillanceImg from "../../../Assets/surveillance-img.svg";
-import Calendar from 'react-calendar'
+import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import TimesPerDay from "../timesPerDay";
+import PilotNavbar from "../../../common/pilotNavbar";
+import PilotSideBar from "../../../components/pilotSidebar";
+import { Datepicker } from "@meinefinsternis/react-horizontal-date-picker";
+import TimeRangePicker from "@wojtekmaj/react-timerange-picker/dist/TimeRangePicker";
 const PilotSchedule = () => {
   const [value, onChange] = useState(new Date());
+
+  const [date, setDate] = useState({
+    startValue: new Date(),
+    rangeDates: [],
+  });
+  console.log(date, "date");
+  const handleChange = (d) => {
+    const [startValue, endValue, rangeDates] = d;
+    setDate((prev) => ({ ...prev, endValue, startValue, rangeDates }));
+  };
+
   const data = [
     {
       date: "29/06/2022",
@@ -35,10 +51,35 @@ const PilotSchedule = () => {
     <div>
       <Header />
       <div className={styles.pilotScheduleContainer}>
+        <PilotSideBar />
         <div className={styles.leftDiv}>
           <div className={styles.title}>Pilot Schedule</div>
-          <div className={styles.calendarDiv} style={{marginLeft: '-250px', marginBottom: '-150px'}}>
-            <TimesPerDay />
+          <div className={stylesS.timesPerDayContainer}>
+            <div className={stylesS.contentDiv} style={{ marginLeft: "-80px" }}>
+              <div className={stylesS.datePicker}>
+                <Datepicker
+                  onChange={handleChange}
+                  startValue={date.startValue}
+                  endValue={date.endValue}
+                />
+              </div>
+              <div className={stylesS.timePicker}>
+                <TimeRangePicker onChange={onChange} value={value} />
+              </div>
+            </div>
+            <div className={stylesS.ButtonDiv} style={{ marginLeft: "-80px" }}>
+              <button
+                onClick={() =>
+                  alert(
+                    `Schedule Confirmed for ${date.startValue
+                      .toString()
+                      .substring(0, 15)} ${value}!`
+                  )
+                }
+              >
+                confirm
+              </button>
+            </div>
           </div>
         </div>
         <div className={styles.rightDiv}>

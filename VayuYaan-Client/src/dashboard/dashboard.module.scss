@@ -1,7 +1,16 @@
 .container {
-  margin: 90px 0px;
+  margin: 0px 10px;
   display: flex;
 }
+// .wrapperBody{
+//   display: flex;
+//   justify-content: flex-start;
+//   gap:10px;
+// }
+
+// .container-fluid {
+//   margin-left: 450px;
+// }
 
 .row {
   display: flex;
@@ -80,6 +89,7 @@
 
   .info-container {
     // margin: 0 120px;
+    
 
     .header {
       font-family: "Inter";
@@ -87,7 +97,7 @@
       font-weight: 600;
       font-size: 36px;
       line-height: 44px;
-
+      margin-top: 20px;
       color: #1a3447;
     }
     .sub-header {
