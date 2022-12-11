@@ -1,10 +1,13 @@
 import styles from './navbar.module.scss';
+import {useNavigate} from 'react-router-dom'
 
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
-function Navbar()   {
+function Navbar({logout})   {
 
+    const navigate = useNavigate()
+    console.log(logout, "llll")
     const onLogout = () => {
         localStorage.removeItem('user')
         cookies.remove('pilot')
@@ -15,7 +18,9 @@ function Navbar()   {
 
     const goHome = () => {
         const user = JSON.parse(localStorage.getItem('user'));
-
+        if(logout){
+        navigate("/");
+        }
     }
 
     const goProfile = () => {
@@ -36,9 +41,11 @@ function Navbar()   {
                     Profile
                 </div>
 
-                <div className={styles['nav-item']} style={{cursor: "pointer"}}>
+                {!logout &&
+                    <div className={styles['nav-item']} style={{cursor: "pointer"}}>
                     <button className={styles['nav-item']} style={{background: "none", border: "none"}} onClick={onLogout}>Logout</button>
                 </div>
+                }
             </div>
             
             

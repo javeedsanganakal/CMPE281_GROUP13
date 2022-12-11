@@ -27,7 +27,7 @@ function Header() {
       window.location = "/profile/pilot";
     }
     if (user.role === "admin") {
-      window.location = "/dashboard/farmer/management";
+      window.location = "/dashboard/drone/management";
     }
   };
 
