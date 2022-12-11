@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { url } from "../../utils/constants";
 import Layout from "../../components/layouts";
 import Header from "../../components/header";
-import PilotNavbar from "../../common/pilotNavbar";
 import PilotSideBar from "../../components/pilotSidebar";
 
 function MyBookings() {
@@ -14,6 +13,9 @@ function MyBookings() {
   const user = JSON.parse(localStorage.getItem("user"));
   let flag = false;
 
+  if (user.role === "farmer") {
+    flag = true;
+  }
   if (user.role === "farmer") {
     flag = true;
   }
@@ -32,6 +34,16 @@ function MyBookings() {
       });
   }, []);
 
+  function randomDate(start, end) {
+    console.log(
+      new Date(
+        start.getTime() + Math.random() * (end.getTime() - start.getTime())
+      )
+    );
+    return new Date(
+      start.getTime() + Math.random() * (end.getTime() - start.getTime())
+    );
+  }
   function randomDate(start, end) {
     console.log(
       new Date(
@@ -114,3 +126,4 @@ function MyBookings() {
 }
 
 export default MyBookings;
+
