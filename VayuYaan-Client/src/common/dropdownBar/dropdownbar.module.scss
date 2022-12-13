@@ -1,0 +1,16 @@
+.bar {
+    background: #00A3FF;
+    border-radius: 10px;
+    width: 1000px;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px;
+
+    .item {
+        background: #226DFF;
+        border-radius: 5px;
+        padding: 12px;
+        border: none;
+        color: white;
+    }
+}

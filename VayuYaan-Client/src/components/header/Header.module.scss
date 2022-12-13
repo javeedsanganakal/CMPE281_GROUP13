@@ -1,0 +1,18 @@
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 90px;
+  height: 90px;
+  background: #1a3447;
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  color: #ffffff;
+  .headerOptions {
+    display: flex;
+    gap: 40px;
+  }
+}
