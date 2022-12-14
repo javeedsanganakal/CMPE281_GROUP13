@@ -99,20 +99,23 @@ function Map({ isConnected = false, missionPlanner, markerTitle = false, icon = 
     useEffect(() => {
         if (Array.isArray(missionPlanner)) {
             setMissionPlannerCoords(missionPlanner[count])
-            setCount(count+1)
+            setCount(count + 1)
         } else {
             return
         }
     }, [missionPlanner])
-    useEffect(()=>{
-        const interval = setInterval(()=>{
-            setMissionPlannerCoords(missionPlanner[count])
-            setCount(count+1)
-            if(count === missionPlanner.length || count-1 > missionPlanner.length){
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (count === missionPlanner.length || count - 1 > missionPlanner.length) {
                 clearInterval(interval)
-
+                return;
             }
+            setMissionPlannerCoords(missionPlanner[count])
+            setCount(count + 1)
+
         }, 3000)
+        return () => clearInterval(interval)
+
     }, [missionPlannerCoords])
     return (
         <div id='map'>
@@ -132,7 +135,7 @@ function Map({ isConnected = false, missionPlanner, markerTitle = false, icon = 
                             draggable={draggable} key={i} position={latLng} />;
                     })
                     }
-                            <Marker icon={DroneImaage} key={0} position={missionPlannerCoords} />; 
+                    <Marker icon={DroneImaage} key={0} position={missionPlannerCoords} />;
                 </GoogleMap>
             </LoadScript>
         </div>
