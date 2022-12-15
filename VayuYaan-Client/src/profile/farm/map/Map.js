@@ -4,7 +4,7 @@ import "./style.css"
 import DroneImaage from "../../../Assets/drone-image.svg";
 
 
-function Map({ isConnected = false, missionPlanner, markerTitle = false, icon = false, Lines = true, draggable = true, lineCoordinates, pointerCoordinates, isDisabled = false, MAXCORDS = 4 }) {
+function Map({ isConnected = false,zoom = 8 ,missionPlanner, markerTitle = false, icon = false, Lines = true, draggable = true, lineCoordinates, pointerCoordinates, isDisabled = false, MAXCORDS = 4 }) {
     const mapStyles = {
         height: "100vh",
         width: "100%"
@@ -12,9 +12,10 @@ function Map({ isConnected = false, missionPlanner, markerTitle = false, icon = 
     const [clicks, setClicks] = useState([]);
     const [lineCords, setLineCords] = useState([])
 
-    const defaultCenter = {
-        lng: -121.80972520136363, lat: 37.33679708256735
-    }
+    const [defaultCenter, setDefaultCenter]=useState({
+        lat: 37.32778538983246,
+        lng: -121.89828872680664
+    })
 
     const onClick = (e) => {
         console.log(e.latLng.toJSON())
@@ -111,6 +112,7 @@ function Map({ isConnected = false, missionPlanner, markerTitle = false, icon = 
                 return;
             }
             setMissionPlannerCoords(missionPlanner[count])
+            setDefaultCenter(missionPlanner[0])
             setCount(count + 1)
 
         }, 3000)
@@ -125,7 +127,7 @@ function Map({ isConnected = false, missionPlanner, markerTitle = false, icon = 
                     onClick={onClick}
                     onIdle={onIdle}
                     mapContainerStyle={mapStyles}
-                    zoom={8}
+                    zoom={zoom}
                     center={defaultCenter}
                 >
                     <Polyline path={lineCords} />
@@ -135,7 +137,9 @@ function Map({ isConnected = false, missionPlanner, markerTitle = false, icon = 
                             draggable={draggable} key={i} position={latLng} />;
                     })
                     }
-                    <Marker icon={DroneImaage} key={0} position={missionPlannerCoords} />;
+                    {
+                        missionPlanner ? (<Marker icon={DroneImaage} key={0} position={missionPlannerCoords} />) : (<></>)
+                    }
                 </GoogleMap>
             </LoadScript>
         </div>
